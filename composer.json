@@ -1,0 +1,35 @@
+{
+	"name": "kevinditscheid/add-wizard",
+	"description": "This extension fixes a bug with the add-wizard and mm-realations",
+	"keywords": [
+		"TYPO3 CMS",
+		"Products"
+	],
+	"homepage": "https://github.com/bara0801/add_wizard",
+	"support": {
+		"issues": "https://github.com/bara0801/add_wizard/issues"
+	},
+	"authors": [
+		{
+			"name": "Kevin Ditscheid",
+			"email": "kevinditscheid@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"license": [
+		"GPL-2.0+"
+	],
+	"type": "typo3-cms-extension",
+	"require": {
+		"typo3/cms-core": "~7.6"
+	},
+	"replace": {
+		"add_wizard": "self.version",
+		"typo3-ter/add_wizard": "self.version"
+	},
+	"autoload": {
+		"psr-4": {
+			"KevinDitscheid\\AddWizard\\": "Classes/"
+		}
+	}
+}
