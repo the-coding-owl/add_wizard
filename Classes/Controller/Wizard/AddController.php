@@ -94,11 +94,19 @@ class AddController extends CoreAddController {
 						// we need to check the row for its data type. If it is an array, it will probably store the relations to
 						// other records. We need to implode this into a comma separated list to be able to restore the stored
 						// values after the wizard falls back to the parent record
-						// @TODO: find out how to detect the table prefix of the records, already stored in the field
+						// Applied the patched code from https://forge.typo3.org/issues/82016#note-3 to handle table prefixed IDs
 						$currentValue = $currentParentRow[$this->P['field']];
-						if ( is_array($currentValue) ) {
-							$currentValue = implode(',', $currentValue);
-						}
+                        if (is_array($currentValue)) {
+                          $arrayToImplode = array_column($currentValue, 'uid');
+                          if(count($arrayToImplode) == 0 && count($currentParentRow[$this->P['field']]) > 0) {
+                            $arrayToImplode = $currentValue;
+                            foreach($arrayToImplode as $key => $elementId) {
+                              if(!is_array($elementId) && !is_object($elementId))
+                              $arrayToImplode[$key] = $this->table . '_' . $elementId;
+                            }
+                          }
+                          $currentValue = implode(',', $arrayToImplode);
+                        }
 						switch ( (string) $this->P['params']['setValue'] ) {
 							case 'set':
 								$data[$this->P['table']][$this->P['uid']][$this->P['field']] = $recordId;
