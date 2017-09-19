@@ -13,26 +13,24 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-$EM_CONF[$_EXTKEY] = array(
-		'title' => 'Add Wizard',
-		'description' => 'This extension fixes a bug with the add-wizard and mm-realations',
-		'category' => 'Misc',
-		'author' => 'Kevin Ditscheid',
-		'author_email' => 'kevinditscheid@gmail.com',
-		'author_company' => '',
-		'state' => 'alpha',
-		'internal' => '',
-		'uploadfolder' => '0',
-		'createDirs' => '',
-		'clearCacheOnLoad' => 0,
-		'version' => '0.0.1',
-		'constraints' => array(
-				'depends' => array(
-						'typo3' => '7.6'
-				),
-				'conflicts' => array(
-				),
-				'suggests' => array(
-				),
-		),
-);
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'Add Wizard',
+    'description' => 'This extension fixes a bug with the add-wizard and mm-realations',
+    'category' => 'Misc',
+    'author' => 'Kevin Ditscheid',
+    'author_email' => 'kevinditscheid@gmail.com',
+    'author_company' => '',
+    'state' => 'experimental',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
+    'clearCacheOnLoad' => 0,
+    'version' => '1.0.0',
+    'constraints' => [
+        'depends' => [
+            'typo3' => '7.6'
+        ],
+        'conflicts' => [],
+        'suggests' => []
+    ]
+];

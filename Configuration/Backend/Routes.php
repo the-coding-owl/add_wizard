@@ -16,9 +16,9 @@ use KevinDitscheid\AddWizard\Controller;
  */
 
 return [
-		// Re-register add wizard
-		'wizard_add' => [
-				'path' => '/wizard/add',
-				'target' => Controller\Wizard\AddController::class . '::mainAction'
-		],
+    // Re-register add wizard
+    'wizard_add' => [
+        'path' => '/wizard/add',
+        'target' => Controller\Wizard\AddController::class . '::mainAction'
+    ],
 ];
